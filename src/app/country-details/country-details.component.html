@@ -1,0 +1,39 @@
+<p>country-details works!</p>
+
+<ul>
+  <li>n</li>
+</ul>
+
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Capital</th>
+    <th scope="col">Population</th>
+    <th scope="col">Currencies</th>
+    <th scope="col">flag</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">{{country.name}}</th>
+    <td>{{country.capital}}</td>
+    <td>{{country.population}}</td>
+    <td>
+
+      <ul>
+        <li>Code:{{country.currencies[0]['code']}}</li>
+        <li>Name:{{country.currencies[0]['name']}}</li>
+        <li>Symbol:{{country.currencies[0]['symbol']}}</li>
+      </ul>
+
+    </td>
+
+
+
+    <td> <img class="flag" src="{{country.flag}}"></td>
+  </tr>
+
+  </tbody>
+</table>
