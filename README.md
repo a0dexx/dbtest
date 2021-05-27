@@ -1,5 +1,16 @@
 # Dbtest
 
+Installation:
+
+git clone git@github.com:a0dexx/dbtest.git
+
+cd dbtest/
+
+npm install
+
+ng serve
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
 ## Development server
