@@ -26,20 +26,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    // this.regionService.getCountries('jjj').subscribe(res => {
-    //   console.log(res);
-    // });
-
     this.initializeValues();
-    // this.fetchData('europe');
     this.initializeListeners();
   }
-
-
-  // getRegion(region): void {
-  //   this.fetchData(region);
-  // }
 
   initializeValues(): void {
     this.isLoading$ = this.store.pipe(select(isLoadingSelector));
@@ -56,11 +45,12 @@ export class AppComponent implements OnInit {
   }
 
   getRegion(regionSelected): void {
+    this.country = null;
+
     this.store.dispatch(getCountriesAction({ region: regionSelected }));
   }
 
-  loadTable(country) {
-    console.log('load this one', country);
+  loadTable(country): void {
     this.country = country;
   }
 }

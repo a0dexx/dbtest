@@ -1,7 +1,6 @@
-
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Angular Bootstrap</a>
+    <a class="navbar-brand" href="#">DB Test</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,63 +9,33 @@
   </nav>
 </header>
 <main role="main">
-
-  <div class="container marketing">
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
+  <div class="container">
+    <hr class="divider">
+    <div class="row">
       <div class="col">
-        <h2 class="featurette-heading">Select Region</h2>
-
-          <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
-            <button class="btn btn-outline-primary mr-2"  ngbDropdownAnchor (focus)="myDrop.open()">Select Region</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownManual">
-              <button ngbDropdownItem (click)="getRegion('asia')">Asia</button>
-              <button ngbDropdownItem (click)="getRegion('europe')">Europe</button>
-
-            </div>
+        <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+          <button class="btn btn-outline-primary mr-2" ngbDropdownAnchor (focus)="myDrop.open()">Select Region</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual">
+            <button ngbDropdownItem (click)="getRegion('asia')">Asia</button>
+            <button ngbDropdownItem (click)="getRegion('europe')">Europe</button>
           </div>
-
-
-
+        </div>
         <ng-container *ngIf="countries$|async">
-
-<!--          <div *ngFor=" let country of countries$|async">-->
-<!--            <div>-->
-<!--              {{country.name}}-->
-<!--            </div>-->
-<!--          </div>-->
-
           <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
-            <button class="btn btn-outline-primary mr-2" ngbDropdownAnchor (focus)="myDrop2.open()">Select Country</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownManual"  >
-
-
-              <button ngbDropdownItem (click)="loadTable(country)" *ngFor=" let country of countries$|async">{{country.name}}</button>
-
-
+            <button class="btn btn-outline-primary mr-2" ngbDropdownAnchor (focus)="myDrop2.open()">Select Country
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+              <button ngbDropdownItem (click)="loadTable(country)"
+                      *ngFor=" let country of countries$|async">{{country.name}}</button>
             </div>
           </div>
-
         </ng-container>
-
-
+        <hr class="divider">
         <ng-container *ngIf="country">
           <app-country-details [country]="country"></app-country-details>
         </ng-container>
-
-<!--<pre>{{countries$|async|json}}</pre>-->
-
       </div>
-<!--      <div class="col-md-5">-->
-<!--&lt;!&ndash;{{isLoading$|async}}&ndash;&gt;-->
-<!--      </div>-->
     </div>
-
-
-
-  </div><!-- /.container -->
-
+  </div>
 </main>
 

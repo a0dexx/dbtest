@@ -6,7 +6,7 @@ import {
   getCountriesSuccessAction,
   getCountriesFailureAction,
 } from './actions/getCountries.action';
-import { routerNavigatedAction, routerNavigationAction } from '@ngrx/router-store';
+import { routerNavigationAction } from '@ngrx/router-store';
 
 const initialState: CountriesStateInterface = {
   isLoading: false,
