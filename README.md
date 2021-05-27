@@ -1,6 +1,6 @@
 # Dbtest
 
-##Installation:
+## Installation:
 
 git clone git@github.com:a0dexx/dbtest.git
 
